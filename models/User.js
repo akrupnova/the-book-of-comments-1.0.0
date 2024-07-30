@@ -6,16 +6,14 @@ const userSchema = new Schema({
     _id: mongoose.Schema.Types.ObjectId,
     firstName: {
         type: String,
-            trim: true,
     },
     lastName: {
         type: String,
-        trim: true,
     },
     comments: [
         {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'Comment'
+          type: mongoose.Schema.Types.ObjectId,
+          ref: 'Comment'
         },
     ]
   }
