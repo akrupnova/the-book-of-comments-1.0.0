@@ -5,7 +5,7 @@ const resolvers = require('./graphql/resolvers');
 
 const MONGODB = 'mongodb+srv://annakrupnovaa:iKuFQ8YKrq0ZPoQJ@cluster0.5dsclnj.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
 
-const server = new ApolloServer({
+const server =new ApolloServer( {
     typeDefs,
     resolvers
 })
