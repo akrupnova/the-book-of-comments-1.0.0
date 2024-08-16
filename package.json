@@ -1,10 +1,11 @@
 {
   "name": "the-book-of-comments-1.0.0",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "nodemon src/index.js",
+    "test1": "mocha src/_test/user/userCreate.spec.js",
+    "test2": "mocha src/_test/user/userGetById1.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -12,10 +13,15 @@
   "description": "",
   "dependencies": {
     "apollo-server": "^3.13.0",
+    "chai": "^4.3.7",
     "express": "^4.19.2",
     "graphql": "^16.9.0",
+    "mocha": "^10.2.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.1",
     "nodemon": "^3.1.4"
+  },
+  "devDependencies": {
+    "supertest": "^6.3.3"
   }
 }
