@@ -8,7 +8,7 @@ let respData = null;
 let postData = null;
 
 before('Delete all users',  () => {
-      return User.deleteMany({});
+      User.deleteMany({});
 
 })
 
