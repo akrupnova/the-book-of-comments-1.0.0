@@ -5,7 +5,7 @@
   "scripts": {
     "start": "nodemon src/index.js",
     "test1": "mocha src/_test/user/5_userCreate1.spec.js",
-    "test2": "mocha src/_test/user/1_userGetById1.spec.js"
+    "test2": "mocha src/_test/user/helper.js src/_test/user/1_userGetById1.spec.js"
   },
   "keywords": [],
   "author": "",

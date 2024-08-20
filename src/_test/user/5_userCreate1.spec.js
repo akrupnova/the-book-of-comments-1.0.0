@@ -7,18 +7,13 @@ const User = require('../../models/User');
 let respData = null;
 let postData = null;
 
-before('Delete all users',  () => {
-      User.deleteMany({});
-
-})
+// before('Delete all users',  () => {
+//       User.deleteMany({});
+//
+// })
 
 describe('USER CREATE', () => {
     describe('USER CREATE - POSITIVE TESTS', () => {
-
-        beforeEach('Before All', () => {
-            console.log('BeforeALL Hook')
-        })
-
         it('user create all fields', (done) => {
             postData = {
                 query: userCreateQ,
@@ -37,7 +32,7 @@ describe('USER CREATE', () => {
                 })
         })
 
-        it('test2', () => {
+        it.skip('test2', () => {
 
         })
 
