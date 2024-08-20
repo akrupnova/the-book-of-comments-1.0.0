@@ -4,8 +4,8 @@
   "main": "src/index.js",
   "scripts": {
     "start": "nodemon src/index.js",
-    "test1": "mocha src/_test/user/userCreate.spec.js",
-    "test2": "mocha src/_test/user/userGetById1.spec.js"
+    "test1": "mocha src/_test/user/5_userCreate1.spec.js",
+    "test2": "mocha src/_test/user/helper.js src/_test/user/1_userGetById1.spec.js"
   },
   "keywords": [],
   "author": "",
@@ -14,6 +14,7 @@
   "dependencies": {
     "apollo-server": "^3.13.0",
     "chai": "^4.3.7",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "graphql": "^16.9.0",
     "mocha": "^10.2.0",

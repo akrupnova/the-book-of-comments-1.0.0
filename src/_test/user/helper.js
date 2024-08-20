@@ -1,15 +1,20 @@
-const {expect} = require('chai');
 const {userCreateQ} = require('./queries');
 const {user} = require('./data');
 const gqlRequest = require('../gqlRequest');
-
+const User = require('../../models/User');
 
 let respData = null;
 let postData = null;
+process.env.USER_ID = null;
+
+before('Delete all users',  () => {
+    User.deleteMany({});
+    console.log('user deleted');
+})
 
 describe('USER CREATE', () => {
-    describe('USER CREATE - POSITIVE TESTS', () => {
-        it('user create all fields', (done) => {
+
+        it('user create all fields - helper', (done) => {
             postData = {
                 query: userCreateQ,
                 variables: user
@@ -20,25 +25,10 @@ describe('USER CREATE', () => {
                 .end((err, res) => {
                     if (err) return done(err)
                     respData = res.body.data.userCreate;
-                    console.log(respData);
-                    expect(respData.firstName).eq(user.userInput.firstName);
-                    expect(respData.lastName).eq(user.userInput.lastName);
+                    process.env.USER_ID = res.body.data.userCreate._id;
+                    console.log("Test user has been created", respData);
                     done()
                 })
         })
-
-        it('', () => {
-
-        })
-
-
-
     })
 
-    // describe('USER CREATE - NEGATIVE TESTS', () => {
-    //     it('', () => {
-    //
-    //     })
-    //
-    // })
-})
